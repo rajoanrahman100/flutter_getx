@@ -14,9 +14,25 @@ class CartController extends GetxController{
   double get totalPrice=> cartItems.fold(0, (sum, element) =>sum+element.price);
 
   addToCart(Product product){
-    cartItems.add(product);
+
+    if(cartItems.contains(product)){
+      print("alredy added in cart");
+    }else{
+      cartItems.add(product);
+      cartAddProducts.assignAll(cartItems);
+    }
+
+
+    // cartItems.forEach((element) {
+    //   if(cartItems.contains(element)){
+    //     var list=[];
+    //     list.add(element);
+    //     print("Cart items length ${list.length}");
+    //   }
+    // });
     //var list=cartItems.toSet().toList();
-    cartAddProducts.assignAll(cartItems);
+   // cartAddProducts.assignAll(list);
+
 
   }
 

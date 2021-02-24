@@ -102,7 +102,6 @@ class ShoppingPage extends StatelessWidget {
             return GestureDetector(
               onTap: (){
 
-
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => CartAddedItems()),
